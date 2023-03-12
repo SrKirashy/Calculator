@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator | Javascript</title>
+</head>
+<body>
+    <section class="Calculator">
+        <div class="screen">
+            0
+        </div>
+        <div class="keybord">
+            <div onclick='clearCalculator()' class="key C">C</div>
+            <div onclick='clearNumber()' class="key ←">&larr;</div>
+            <div class="key On">On</div>
+            <div class="key Off">Off</div>
+        </div>
+        <div class="keybord">
+            <div onclick='handlerNumber("7")' class="key">7</div>
+            <div onclick='handlerNumber("8")' class="key">8</div>
+            <div onclick='handlerNumber("9")' class="key">9</div>
+            <div onclick="handlerSignal('÷')" class="key">&divide;</div>
+        </div>
+        <div class="keybord">
+            <div onclick='handlerNumber("4")' class="key">4</div>
+            <div onclick='handlerNumber("5")' class="key">5</div>
+            <div onclick='handlerNumber("6")' class="key">6</div>
+            <div onclick="handlerSignal('x')" class="key">x</div>
+        </div>
+        <div class="keybord">
+            <div onclick='handlerNumber("1")' class="key">1</div>
+            <div onclick='handlerNumber("2")' class="key">2</div>
+            <div onclick='handlerNumber("3")' class="key">3</div>
+            <div onclick="handlerSignal('-')" class="key">-</div>
+        </div>
+        <div class="keybord">
+            <div onclick='handlerNumber("0")' class="key">0</div>
+            <div class="key">.</div>
+            <div onclick="makeAccount()" class="key equal">=</div>
+            <div onclick="handlerSignal('+')" class="key">+</div>
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

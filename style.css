@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Golos Text', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #0f0013, #11001b);
+}
+
+.Calculator{
+    width: 280px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to left, #222,#2b2b2b) ;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #360835;
+    border: 1px solid rgb(83, 0, 94) ;
+}
+.screen {
+    width: 240px;
+    height: 50px;
+    border: 1px solid rgba(103, 5, 112, 0.274) ;
+    background: linear-gradient(to right, #222,#222222) ;
+    color: #dddddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-align: right;
+    padding: 0px 10px;
+    box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+}
+.keybord {
+    width: 260px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.keybord .key:last-child {
+    background-color: rgb(97, 0, 153) ;
+}
+.key {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    color: #DDD;
+    font-size: 20px;
+    font-weight:bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.808);
+    background-color: rgb(52, 1, 82);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 0px black;
+}
+.C{
+    background-color: rgb(68, 0, 82) ;
+}
+.←{
+    background-color: rgb(89, 0, 100) ;
+}
+.On{
+    background-color: rgb(67, 3, 92) ;
+}
+.equal {
+    background-color: rgb(68, 0, 82) ;
+}
