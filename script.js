@@ -45,6 +45,9 @@ function handlerSignal(clickedSignal) {
 }
 function makeAccount() {
     phases = 2;
+    if (n2 === '') {
+        n2 = '0';
+    }
     switch (signal) {
         case '÷':
             valueAccount = parseInt(n1) / parseInt(n2);
