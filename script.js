@@ -1,36 +1,47 @@
-let screenValue = 0;
+let screenValue = '';
 let n1 = '';
 let n2 = '';
+let turn = false;
 let valueAccount = 0;
 let phases = 0;
 let signal = '';
 let audio = new Audio("./sound/click.mp3");
+let screen = document.querySelector('.screen')
 
 document.querySelectorAll('.key').forEach(item => {
     item.addEventListener('click', playAudio);
 })
 
 function handlerNumber(number) {
-    if (phases === 0) {
+    if (turn && phases === 0) {
         if (n1.length === 8) {
 
         } else {
             n1 =  n1 + number;
         }
-    } else if (phases === 1) {
+    } else if (turn && phases === 1) {
         if (n2.length === 8) {
 
         } else {
             n2 =  n2 + number;
         }
-    } 
+    } else {
+        return;
+    }
     
     updateScreen();
 }
 
 function handlerSignal(clickedSignal) {
-    phases = 1;
-    signal = clickedSignal;
+    if (n1 === '') {
+        phases = 1;
+        signal = clickedSignal;
+        n1 = '0';
+    } else {
+        phases = 1;
+        signal = clickedSignal;
+    }
+
 }
 function makeAccount() {
     phases = 2;
@@ -64,6 +75,7 @@ function updateScreen() {
         }
     } else if (phases === 1) {
         screenValue = treatNumbers(n2);
+        console.log(screenValue);
         if (screenValue === 'NaN' || screenValue === '-'){
             screenValue = '0';
         }
@@ -71,8 +83,7 @@ function updateScreen() {
         if (valueAccount.toString().length >= 9) {
             screenValue = '- - - - - - - - -'
             setTimeout(clearCalculator, 300);
-        } else {
-            console.log(valueAccount)
+        }  else {
             screenValue = treatNumbers(valueAccount).toString();
             phases = 0;
             n1 = valueAccount.toString();
@@ -111,11 +122,31 @@ function clearNumber() {
 }
 
 function playAudio() {
-    audio.currentTime = 0.3
-    audio.play();
+    if (turn){
+        audio.currentTime = 0.3
+        audio.play();
+    }
 }
 
 function treatNumbers (numberClicked) {
     screenViewTreated = parseFloat(numberClicked).toLocaleString('pt-br');
     return screenViewTreated;
+}
+
+function onButton() {
+    screenValue = '';
+    updateScreen();
+    screen.style.color = '#dddddd';
+    turn = true;
+}
+
+function offButton() {
+    screen.style.color = 'transparent';
+    screenValue = '';
+    n1 = '';
+    n2 = '';
+    valueAccount = 0;
+    phases = 0;
+    signal = '';
+    turn = false;
 }

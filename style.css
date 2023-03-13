@@ -32,7 +32,7 @@ body{
     height: 50px;
     border: 1px solid rgba(103, 5, 112, 0.274) ;
     background: linear-gradient(to right, #222,#222222) ;
-    color: #dddddd;
+    color:  transparent;
     border-radius: 5px;
     margin-bottom: 15px;
     font-size: 40px;
